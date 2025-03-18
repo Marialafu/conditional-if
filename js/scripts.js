@@ -39,18 +39,18 @@ console.log(knowIfNumberIsMultiple (4));
 
 //4️⃣ Abby está evaluando candidatos para su equipo. Los candidatos harán tres pruebas y cada una se evalúa de 0 a 10. Si la media está entre 0 y 4 mostrará el mensaje "Estás Fuera", si la media está entre 5 y 7 mostrará "Entras en la reserva" y si la media es 8 o más dirá "Salimos al amanecer".
 
-const knowIfCandidateIsValide = (note) => {
-    if (note <= 4){
+const knowIfCandidateIsValide = (firstTest, secondTest, thirdTest) => {
+    const testResult = (firstTest + secondTest + thirdTest) / 3
+    if (testResult <= 4.9){
         return 'Estás fuera'
-    } else if (note >= 5 && note <= 7) {
+    } else if (testResult >= 5 && testResult <= 7.9) {
         return 'Entras en la reserva'
-    } else if(note >= 8 && note <= 10) {
+    } else if(testResult >= 8) {
         return 'Salimos al amanecer'
     }
 }
-console.log(knowIfCandidateIsValide (3));
-console.log(knowIfCandidateIsValide (6));
-console.log(knowIfCandidateIsValide (10));
+console.log(knowIfCandidateIsValide (3, 6, 4));
+
 
 //5️⃣ Macarena tiene tres perros de distintas razas y quiere saber cuál de ellos es el más grande. Crea una función que reciba el peso de los tres perros y determine cuál es el más pesado.
 
@@ -102,8 +102,8 @@ const knowLeapYear = (year) => {
         return 'No es bisiesto'
     }
 }
-console.log(knowLeapYear(4));
-console.log(knowLeapYear(150));
+console.log(knowLeapYear(2032));
+console.log(knowLeapYear(2025));
 
 //9️⃣ Abby está hackeando un sistema de seguridad en una misión secreta. Para acceder, debe introducir un código numérico. La puerta solo se abrirá si el número es par y mayor que 50, o si es impar pero un múltiplo de 7. Crea una función que reciba un número y determine si Abby podrá entrar ("Acceso concedido") o si la puerta seguirá bloqueada ("Acceso denegado").
 
