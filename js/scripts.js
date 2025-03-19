@@ -41,7 +41,7 @@ console.log(knowIfNumberIsMultiple (4));
 
 const knowIfCandidateIsValide = (firstTest, secondTest, thirdTest) => {
     const testResult = (firstTest + secondTest + thirdTest) / 3
-    if (testResult <= 4.9){
+    if (testResult < 5){
         return 'Estás fuera'
     } else if (testResult >= 5 && testResult <= 7.9) {
         return 'Entras en la reserva'
@@ -96,9 +96,9 @@ console.log(knowHowMuchCandyBegoGives(5));
 //8️⃣ Sabrina está planificando un viaje muy especial para celebrar el año nuevo y quiere saber si el año en el que piensa viajar es bisiesto, ya que eso afectará la fecha del viaje. Crea una función que reciba un año como parámetro y determine, siguiendo la regla de que un año es bisiesto si es divisible por 4, pero no por 100, a menos que también sea divisible por 400, si es bisiesto ("Es un año bisiesto") o si no lo es ("No es un año bisiesto").
 
 const knowLeapYear = (year) => {
-    if (year % 4 === 0) {
+    if (year % 4 === 0 && year % 100 !== 0 || year % 400 !== 0) {
         return 'Es bisiesto'
-    } else if (year % 100 !== 0 || year % 400 !== 0){
+    } else {
         return 'No es bisiesto'
     }
 }
@@ -118,9 +118,9 @@ console.log(AbbyCodeRight(3));
 //🔟 Macarena está evaluando la salud de sus perros según su peso y edad. Un perro se considera en peso saludable sólo si pesa entre 8 y 30 kg. Además solo se considerará saludable si su edad es un número múltiplo de 3 y menor de 15. Crea una función que reciba el peso del perro y su edad. Determina si está saludable ("El perro está saludable") o si no ("Perro pocho 😢")
 
 const knowDogHealth = (dogWeight, dogAge) => {
-    if ((dogWeight >= 8 && dogWeight <= 30) && (dogAge % 3 === 0 && dogAge <= 15)){
+    if (dogWeight >= 8 && dogWeight <= 30 && dogAge % 3 === 0 && dogAge <= 15){
         return 'El perro está saludable'
-    } else {'911, perro pocho'}
+    } else {return '911 Perro pocho'}
 }
 console.log(knowDogHealth(10, 9));
 console.log(knowDogHealth(50, 9));
